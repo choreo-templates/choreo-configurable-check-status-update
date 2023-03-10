@@ -1,0 +1,34 @@
+name: 'Choreo Configurable Check Status Update'
+description: 'Update the configurable check status'
+author: WSO2
+branding:
+  icon: 'arrow-up-circle'
+  color: 'orange'
+inputs:
+  appId:
+    description: 'Application ID'
+    required: false
+  envId:
+    description: 'Environment ID'
+    required: false
+  versionId:
+    description: 'API Version ID'
+    required: false
+  commitId:
+    description: 'Source Commit ID'
+    required: false
+  runId:
+    description: 'Run ID'
+    required: false
+  configCheckStatus:
+    description: 'Configuration Check Status'
+    required: false
+  configurableUpdateURL:
+    description: 'Configurable Update API Proxy URL'
+    required: false
+outputs:
+  choreo-status:
+    description: 'Status of operation'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
