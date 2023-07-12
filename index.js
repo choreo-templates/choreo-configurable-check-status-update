@@ -31,12 +31,11 @@ function updateRudderWithNewConfigurables(configurableUpdateURL, appId, envId, a
         };
 
         axios.post(configurableUpdateURL, payload).then(function (response) {
-            core.setOutput("choreo-configurable-update-status", "updated");
             console.log("choreo-configurable-update-status", "updated");
             console.log("Config Update Status : " + response.status);
           })
           .catch(function (error) {
-            core.setOutput("choreo-status", "failed");
+            console.log("choreo-status", "failed");
             console.log(error);
           });
     }   
